@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>How to configure Chalk | Luofei's Corner</title>
+  <meta name="description" content="Learn more about the config file for Chalk and how to set it up properly.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔</text></svg>">
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav">
+          <a href="/" class="header-logo" title="Luofei's Corner"> 🍃 </a>
+        </nav>
+
+        <article class="article">
+          <header class="article-header">
+            <h1>How to configure Chalk</h1>
+            <div class="article-meta">
+              <span class="article-date">December 22, 2017</span>
+              
+                <span class="article-categories"></span>
+              
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p>The <code class="language-plaintext highlighter-rouge">_config.yml</code> file is the most important one. It contains the basic setup of your project.
+Some parts are preconfigured and shouldn’t be touched as the comments state.
+Of course if you are familiar with Jekyll you can change whatever you want.</p>
+
+<p>Note: You do not <em>have</em> to change anything. Chalk works out of the box. I do recommend changing the <code class="language-plaintext highlighter-rouge">_config.yml</code> to suit your needs.</p>
+
+<h3 id="mandatory-settings">Mandatory settings</h3>
+
+<figure class="highlight"><pre><code class="language-yml" data-lang="yml"><span class="c1"># Mandatory settings</span>
+
+<span class="na">blog_theme</span><span class="pi">:</span> <span class="s">light</span> <span class="c1"># Or use dark</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">Chalk</span>
+<span class="na">paginate</span><span class="pi">:</span> <span class="m">25</span>
+<span class="na">url</span><span class="pi">:</span> <span class="c1"># add your site url (format: https://example.com)</span></code></pre></figure>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">blog_theme</code>: 2 options here, <code class="language-plaintext highlighter-rouge">light</code> or <code class="language-plaintext highlighter-rouge">dark</code>. Choose which design you prefer.</li>
+  <li><code class="language-plaintext highlighter-rouge">name</code>: Used as the page title and throughout your project as the default name.</li>
+  <li><code class="language-plaintext highlighter-rouge">paginate</code>: Define how much posts should be shown on the homepage for each page.</li>
+  <li><code class="language-plaintext highlighter-rouge">url</code>: Your production url (https://example.com).</li>
+</ul>
+
+<h3 id="optional-settings">Optional settings</h3>
+
+<figure class="highlight"><pre><code class="language-yml" data-lang="yml"><span class="c1"># Optional settings</span>
+
+<span class="na">about_enabled</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># Change to true if you wish to show an icon in the navigation that redirects to the about page</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="c1"># Set if blog doesn't sit at the root of the domain (format: /blog)</span>
+<span class="na">discus_identifier</span><span class="pi">:</span> <span class="c1"># Add your Disqus identifier</span>
+<span class="na">ga_analytics</span><span class="pi">:</span> <span class="c1"># Add your GA Tracking Id</span>
+<span class="na">local_fonts</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># Change to true if you wish to use local fonts</span>
+<span class="na">rss_enabled</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># Change to false if not</span>
+<span class="na">scrollappear_enabled</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># Change to false to disable</span>
+<span class="na">tag_nav_enabled</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># Change to true if you wish to show an additional 'tag-list' navigation below the header</span>
+<span class="na">social</span><span class="pi">:</span>
+  <span class="na">dribbble</span><span class="pi">:</span> <span class="c1"># Add your Dribbble handle</span>
+  <span class="na">facebook</span><span class="pi">:</span> <span class="c1"># Add your Facebook handle</span>
+  <span class="na">flickr</span><span class="pi">:</span> <span class="c1"># Add your Flickr handle</span>
+  <span class="na">github</span><span class="pi">:</span> <span class="c1"># Add your GitHub handle</span>
+  <span class="na">linkedin</span><span class="pi">:</span> <span class="c1"># Add your LinkedIn handle</span>
+  <span class="na">twitter</span><span class="pi">:</span> <span class="c1"># Add your Twitter handle</span>
+  <span class="na">email</span><span class="pi">:</span> <span class="c1"># Add your Email address</span>
+  <span class="na">bitcoin</span><span class="pi">:</span> <span class="c1"># Add your Bitcoin link or address</span>
+  <span class="na">ethereum</span><span class="pi">:</span> <span class="c1"># Add your Ethereum link or address</span>
+  <span class="na">gitlab</span><span class="pi">:</span> <span class="c1"># Add your GitLab handle</span>
+  <span class="na">youtube</span><span class="pi">:</span> <span class="c1"># Add your Youtube handle</span>
+  <span class="na">twitch</span><span class="pi">:</span> <span class="c1"># Add your Twitch handle</span>
+  <span class="na">discord</span><span class="pi">:</span> <span class="c1"># Add you Discord server invitation ID</span>
+  <span class="na">tumblr</span><span class="pi">:</span> <span class="c1"># Add your Tumblr handle</span>
+  <span class="na">bitbucket</span><span class="pi">:</span> <span class="c1"># Add your Bitbucket handle</span>
+  <span class="na">docker</span><span class="pi">:</span> <span class="c1"># Add your Docker Hub handle</span>
+  <span class="na">instagram</span><span class="pi">:</span> <span class="c1"># Add your Instagram handle</span>
+  <span class="na">keybase</span><span class="pi">:</span> <span class="c1"># Add your Keybase handle</span>
+  <span class="na">medium</span><span class="pi">:</span> <span class="c1"># Add your Medium handle</span>
+  <span class="na">spotify</span><span class="pi">:</span> <span class="c1"># Add your Spotify handle</span>
+  <span class="na">stackoverflow</span><span class="pi">:</span> <span class="c1"># Add your Stack Overflow ID number</span>
+  <span class="na">steam</span><span class="pi">:</span> <span class="c1"># Add your Steam handle</span></code></pre></figure>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">about_enabled</code>: If you wish to put the about page link in the top navigation in between the social icons set to true.</li>
+  <li><code class="language-plaintext highlighter-rouge">discus_identifier</code>: If you like to use Disqus for comments on each blog post, you can add the Disqus identifier here and it will popup automatically.</li>
+  <li><code class="language-plaintext highlighter-rouge">ga_analytics</code>: Add Google Analytics Tracking ID here, it uses the Google Tag Manager snippet.</li>
+  <li><code class="language-plaintext highlighter-rouge">local_fonts</code>: By default Chalk uses Google Fonts but if you wish to use local fonts this is the fallback.</li>
+  <li><code class="language-plaintext highlighter-rouge">rss_enabled</code>: When set to <code class="language-plaintext highlighter-rouge">true</code>, the rss icon in the top navigation will show up and people will be able to subscribe to your rss feed.</li>
+  <li><code class="language-plaintext highlighter-rouge">scrollappear_enabled</code>: If set to <code class="language-plaintext highlighter-rouge">true</code>, some elements appear with fade-in effect when visible for the first time, i.e., when scrolling down.</li>
+  <li><code class="language-plaintext highlighter-rouge">social</code>: Add you social links in here. When filled in they will show up in the navigation.</li>
+</ul>
+
+<h3 id="other-settings">Other settings</h3>
+
+<p>Other than the <code class="language-plaintext highlighter-rouge">_config.yml</code> you can change a lot more in the project.</p>
+
+<h4 id="tags">Tags</h4>
+
+<p>To add tags you must add a file with the tag name in <code class="language-plaintext highlighter-rouge">_my_tags</code>.
+In the file you add 2 variables: <code class="language-plaintext highlighter-rouge">slug</code> used to reference the tag and <code class="language-plaintext highlighter-rouge">name</code> which is displayed in the article header.</p>
+
+<figure class="highlight"><pre><code class="language-yml" data-lang="yml"><span class="c1"># _my_tags/design.md</span>
+<span class="nn">---</span>
+<span class="na">slug</span><span class="pi">:</span> <span class="s">design</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">Design</span>
+<span class="nn">---</span></code></pre></figure>
+
+<h4 id="scss">SCSS</h4>
+
+<p>You can change colors, fonts, sizes in the <code class="language-plaintext highlighter-rouge">_assets/stylesheets/_variables.scss</code> file.
+For each specific theme (light or dark) you can change the variables in <code class="language-plaintext highlighter-rouge">_assets/stylesheets/dark.scss</code> and <code class="language-plaintext highlighter-rouge">_assets/stylesheets/light.scss</code>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// =============================================================================</span>
+<span class="c1">// Variables</span>
+<span class="c1">// =============================================================================</span>
+
+<span class="c1">// Typography</span>
+<span class="c1">// =============================================================================</span>
+
+<span class="nv">$sans-serif</span><span class="p">:</span> <span class="s2">"Lato"</span><span class="o">,</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="nv">$serif</span><span class="p">:</span> <span class="s2">"Cormorant Garamond"</span><span class="o">,</span> <span class="n">Courier</span><span class="o">,</span> <span class="nb">serif</span><span class="p">;</span>
+<span class="nv">$base-font-family</span><span class="p">:</span> <span class="nv">$sans-serif</span><span class="p">;</span>
+<span class="nv">$base-font-weight</span><span class="p">:</span> <span class="m">400</span><span class="p">;</span>
+<span class="nv">$base-font-weight-bold</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
+
+<span class="c1">// Colors</span>
+<span class="c1">// =============================================================================</span>
+
+<span class="c1">// Brand colors</span>
+
+<span class="nv">$brand-success</span><span class="p">:</span> <span class="mh">#1fbf92</span><span class="p">;</span>
+<span class="nv">$brand-danger</span><span class="p">:</span> <span class="mh">#e74b3c</span><span class="p">;</span>
+<span class="nv">$brand-primary</span><span class="p">:</span> <span class="mh">#3449ed</span><span class="p">;</span>
+<span class="nv">$brand-warning</span><span class="p">:</span> <span class="mh">#f1c90b</span><span class="p">;</span>
+
+<span class="c1">// Sizes</span>
+<span class="c1">// =============================================================================</span>
+
+<span class="c1">// Grid</span>
+
+<span class="nv">$columns</span><span class="p">:</span> <span class="m">12</span><span class="p">;</span>
+<span class="nv">$max-width</span><span class="p">:</span> <span class="m">650px</span><span class="p">;</span>
+<span class="nv">$gutter</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="nv">$one-column</span><span class="p">:</span> <span class="m">100%</span> <span class="o">/</span> <span class="nv">$columns</span><span class="p">;</span>
+<span class="nv">$negative-gutter</span><span class="p">:</span> <span class="m">0</span> <span class="o">-</span> <span class="nv">$gutter</span><span class="p">;</span>
+
+<span class="c1">// Font sizes</span>
+
+<span class="nv">$base-font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+<span class="nv">$base-line-height</span><span class="p">:</span> <span class="m">1</span><span class="mi">.8</span><span class="p">;</span>
+
+<span class="c1">// Box sizes</span>
+
+<span class="nv">$base-border-radius</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span>
+
+<span class="c1">// Effects</span>
+<span class="c1">// =============================================================================</span>
+
+<span class="nv">$base-transition-speed</span><span class="p">:</span> <span class="mi">.2s</span><span class="p">;</span></code></pre></figure>
+
+<h4 id="fonts">Fonts</h4>
+
+<p>Chalk uses Google Fonts by default. You can change the font in <code class="language-plaintext highlighter-rouge">_assets/javascripts/webfonts.js</code> and in <code class="language-plaintext highlighter-rouge">404.html</code>.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">WebFont</span><span class="p">.</span><span class="nx">load</span><span class="p">({</span>
+  <span class="na">google</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">families</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">Cormorant Garamond:700</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Lato:300,400,700</span><span class="dl">'</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Don’t forget that Chalk also supports local fonts if enabled in <code class="language-plaintext highlighter-rouge">config.yml</code>!</p>
+
+<h4 id="footer">Footer</h4>
+
+<p>Changing the text in the footer is easy. It can be found in <code class="language-plaintext highlighter-rouge">_includes/footer.html</code>.</p>
+
+<p><em>If you have any questions about using or configuring Chalk please create an issue <a href="" title="here" rel="noreferrer noopener" target="_blank">here</a>!</em></p>
+
+          </div>
+        </article>
+
+        <footer class="footer">
+          <p>© 2025 Luofei's Corner. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .grid {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .article {
+      margin-top: 4rem;
+    }
+
+    .article-header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .article-meta {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 2rem;
+      font-weight: 430;
+    }
+
+    .article-date {
+      margin-right: 1rem;
+    }
+
+    .article-categories {
+      color: #007bff;
+    }
+
+    .article-content {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      font-weight: 430;
+    }
+
+    .header-nav {
+      margin: 0;
+      padding: 1rem;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .header-logo {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .header-logo:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</body>
+</html>
