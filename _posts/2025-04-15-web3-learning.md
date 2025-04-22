@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Crash Course to Web3 - 5 weeks - parttime edition"
-date: 2025-04-14 21:31:00 -0400
+date: 2025-04-15 21:31:00 -0400
 categories: Web3
 tags: [Web3]
 ---
