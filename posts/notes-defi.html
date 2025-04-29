@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Week2: Notes on UCB MOOC: Intro to DeFi | Luofei's Corner</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔</text></svg>">
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav">
+          <a href="/" class="header-logo" title="Luofei's Corner"> 🍃 </a>
+        </nav>
+
+        <article class="article">
+          <header class="article-header">
+            <h1>Week2: Notes on UCB MOOC: Intro to DeFi</h1>
+            <div class="article-meta">
+              <span class="article-date">April 28, 2025</span>
+              
+                <div class="article-tags">
+                  
+                    <a href="/posts?category=Web3" class="tag">Web3</a>
+                  
+                </div>
+              
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p>Thoughts: Lec1 - Lec4 in this course supplements the MIT Blockchain and Money course. While the MIT course is more conceptual and is good at 
+emphasis on understanding the concept. This course is more detail oriented, with a lot more execution details.
+I enjoy learning about basis of rollup technologies from session 2 for scaling blockchain, and writing and deploying my first Solidity
+project in Session 4.</p>
+
+<h2 id="session-1-introduction-and-overview-of-defi">Session 1: Introduction and Overview of DeFi</h2>
+
+<ol>
+  <li>What is DeFi:
+    <ul>
+      <li>Financial assets controlled by the user (non-custodial)</li>
+      <li>No one can single-handedly censor a transaction execution</li>
+      <li>No one can single-handedly censor a protocol execution</li>
+    </ul>
+  </li>
+  <li>Flash loans: pools lend assets within one transaction, the assets are paid back by the end of the transaction, and interest is paid on the lent amounts.</li>
+  <li>Market manipulation:
+    <ol>
+      <li>Wash trading: A form of market manipulation where the same trader (or colluding traders) simultaneously buys and sells a security to create a false appearance of market activity.</li>
+      <li>Market cornering: Acquiring enough control of a particular asset or commodity so that the trader can manipulate the price.</li>
+      <li>Bear raiding: A strategy where traders try to drive down the price of a stock by short selling and spreading negative rumors or sentiment.</li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="session-2-introduction-to-blockchain-technology">Session 2: Introduction to Blockchain Technology</h2>
+
+<ol>
+  <li>Consensus layer -&gt; Compute layer (blockchain computer) -&gt; applications (DApps, smart contracts) -&gt; user-facing tools (cloud servers)</li>
+  <li>Digital Signature:
+    <ul>
+      <li>Discrete-log signatures: Schnorr and ECDSA, short signatures (48 or 64 bytes) and public keys (32 bytes)</li>
+    </ul>
+  </li>
+  <li>Scaling:
+    <ul>
+      <li>Bitcoin vs Ethereum vs Visa: 5 vs 20 vs 24,000 (Tx/sec)</li>
+      <li>Approaches:
+        <ul>
+          <li>Faster consensus: modern blockchains (Solana, Polkadot, Avalanche)</li>
+          <li>Payment Channels (e.g., Lightning), participants can only touch chain when a channel is created or closed.</li>
+          <li>Layer 2 approaches: zkRollup, Optimistic Rollup (Batch many transactions into a single Tx)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Rollups
+    <ul>
+      <li>Main tool: SNARK: Verifier’s run time is <em>much</em> less than running C</li>
+      <li>zk: a Rollup coordinator compresses a thousand Tx into one on-chain proof (SNARK) for verifiers, so verifiers don’t have to verify each transaction individually.</li>
+      <li>optimistic: Coordinator posts Tx data on chain without a proof, if a posted Tx is invalid, anyone can submit a fraud proof and win a reward, Rollup server gets slashed.</li>
+    </ul>
+  </li>
+  <li>Interoperability: Enable a user to move funds/assets to another system.
+Composability: Enable a DApp on one blockchain to call a DApp on another.</li>
+</ol>
+
+<h2 id="session-3-introduction-to-traditional-finance">Session 3: Introduction to Traditional Finance</h2>
+
+<ul>
+  <li>A financial system works well if:
+    <ul>
+      <li>Goods are allocated to the people who value them the most.</li>
+      <li>People willingly participate in the system.</li>
+    </ul>
+  </li>
+  <li>Properties of Financial Assets:
+    <ul>
+      <li>Financial assets are composable (“Value Additivity”)</li>
+      <li>How you divide/add up assets does not affect their value.</li>
+    </ul>
+  </li>
+  <li>Trading Venues: 13 Exchanges, 33 Equity ATS, OTC venues</li>
+  <li>Trading cost: spread = Ask - Bid</li>
+  <li>DTCC: monopoly clearing house</li>
+  <li>Payments: 3% of GDP in 2000.
+    <ul>
+      <li>Interbank payments are settled through various wholesale platforms such as Fedwire, CHIPS; Use of these platforms includes a small nominal cost and implicit costs such as collateral requirements and daylight overdraft limits.</li>
+      <li>Banks make loans that are partially backed by deposits; most of the money in circulation is privately created by commercial banks. (Fractional reserve banking)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="session-4-smart-contracts">Session 4: Smart Contracts</h2>
+
+<ul>
+  <li>Smart contracts: neither smart nor contracts. Just programmable objects on blockchain.</li>
+  <li>Dutch Auction: price only goes down over time, the first offer gets the bid.</li>
+  <li>Difference between fungible and non-fungible:
+    <ul>
+      <li>Non-fungible: each asset in a series has a distinct ID, attributes</li>
+      <li>Fungible: the assets are interchangeable, can be summed up</li>
+    </ul>
+  </li>
+  <li>https://remix.ethereum.org/ - Playground for Solidity</li>
+</ul>
+
+          </div>
+        </article>
+
+        <footer class="footer">
+          <p>© 2025 Luofei's Corner. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .grid {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .article {
+      margin-top: 4rem;
+    }
+
+    .article-header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .article-meta {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 2rem;
+      font-weight: 430;
+    }
+
+    .article-date {
+      margin-right: 1rem;
+    }
+
+    .article-tags {
+      display: inline-block;
+      margin-left: 1rem;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      background-color: #f8f9fa;
+      color: #007bff;
+      text-decoration: none;
+      border-radius: 3px;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+    }
+
+    .article-content {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      font-weight: 430;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .article-links {
+      border-left: 1px solid #eee;
+      padding-left: 2rem;
+    }
+
+    .article-links h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .article-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .article-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-links a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 430;
+    }
+
+    .article-links a:hover {
+      text-decoration: underline;
+    }
+
+    .header-nav {
+      margin: 0;
+      padding: 1rem;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .header-logo {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .header-logo:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</body>
+</html>

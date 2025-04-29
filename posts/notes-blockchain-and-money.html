@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Week1: Notes on MIT OpenCourse: Blockchain and Money | Luofei's Corner</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔</text></svg>">
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav">
+          <a href="/" class="header-logo" title="Luofei's Corner"> 🍃 </a>
+        </nav>
+
+        <article class="article">
+          <header class="article-header">
+            <h1>Week1: Notes on MIT OpenCourse: Blockchain and Money</h1>
+            <div class="article-meta">
+              <span class="article-date">April 21, 2025</span>
+              
+                <div class="article-tags">
+                  
+                    <a href="/posts?category=Web3" class="tag">Web3</a>
+                  
+                </div>
+              
+            </div>
+          </header>
+
+          <div class="article-content">
+            <p>My purpose: Know basic concepts and be able to explain them well, understand how the current blockchain applications (2025)
+fit into the money system and fit into 2018’s blockchain visionary back then, and think about what other applications that blockchain could have an edge on.</p>
+
+<h2 id="session-1-intro">Session 1: Intro</h2>
+
+<ul>
+  <li>Blockchain technology core: How do you move money peer to peer without a centralized Intermediary; Blockchain provides P2P alternative and solves cost of trust</li>
+  <li>Role of Finance: Moving, Allocating, Pricing of money and risk throughout the economy</li>
+  <li>Role of Money: store of value, scale of unit, medium of exchange</li>
+  <li>Money is a social and economic construct</li>
+</ul>
+
+<h2 id="session-2-money-ledgers-and-bitcoin">Session 2: Money, Ledgers, and Bitcoin</h2>
+
+<ul>
+  <li>Ledger: principal records of accounts: economic activity, financial relationships</li>
+  <li>Type of ledgers:
+    <ul>
+      <li>Transaction vs. balance: e.g. bitcoin is transaction ledger, eth is balance ledger</li>
+      <li>General ledger vs. sub/supporting ledger: sub ledger is specialized for one category, e.g. salary, and sub ledger has more details.</li>
+      <li>Single entry ledger vs. double entry book keeping</li>
+    </ul>
+  </li>
+  <li>Characteristics of good ledger: Immutable, Consistency/ Timestamped/ Ownership/ Accuracy/ Description of Transaction/ Comprehensive</li>
+  <li>Payment system: A method to amend &amp; record changes in ledgers for money</li>
+  <li>Fiat Currency:
+    <ul>
+      <li>Social &amp; Economic Consensus</li>
+      <li>Represented by Central Bank Liabilities &amp; Commercial Bank Deposits</li>
+      <li>Relies upon System of Ledgers Integrated into Fractional Banking System</li>
+      <li>Accepted for Taxes</li>
+      <li>Notes &amp; Coins are Legal Tender for All Debts Public &amp; Private</li>
+      <li>Unique Tax Treatment</li>
+    </ul>
+  </li>
+  <li>Design of money: token vs. account based, physical vs. digital, private sector vs. central bank, widely accessible vs. wholesale</li>
+</ul>
+
+<h2 id="session-3-blockchain-basics--cryptography">Session 3: Blockchain Basics &amp; Cryptography</h2>
+
+<ul>
+  <li>Blockchain technologies:
+    <ul>
+      <li>Timestamped append-only log (compressed with index of Merkel Tree, making it searchable later)</li>
+    </ul>
+  </li>
+  <li>Secured through hash functions (Deterministic and efficiently computed, mapping input to fixed length output) &amp; Digital signature (public private key cryptography, signature is generated from private key and message, but verifiable with public key and message)</li>
+  <li>Bitcoin Address: determined by public key:
+    <ul>
+      <li>Private key —-(elliptic curve multiplication)—&gt; public key —-(double hash, sha256 + ripemd160)—&gt; public key hash ——-(base58Check encode)—–&gt; bitcoin address</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="session-4-blockchain-basics--consensus">Session 4: Blockchain Basics &amp; Consensus</h2>
+
+<p><em>000000000000000000012c1b3d30a308a6a23b440182940bf1e0d7000b2b81e8 (20/04/2025 - 12:11)</em></p>
+
+<p>(19 leading 0s)</p>
+
+<ul>
+  <li>Decentralized Network Consensus
+    <ul>
+      <li>Consensus through Proof of Work</li>
+      <li>Native currency (Economic Incentive System)</li>
+      <li>Network (Full nodes, lightweight nodes, miners, wallets)</li>
+    </ul>
+  </li>
+  <li>How does bitcoin wallet address gets generated so making sure there’s no collision: bitcoin uses 256 bit private key, after hashing and shrinking, it’s 2^160 possible addresses.
+    <ul>
+      <li>It takes 2^80 ~= 1.2 ×10²⁴ hashes to have a collision (a)</li>
+      <li>NVIDIA RTX 4090 can do 1billion SHA-256 hashes/sec (b)</li>
+      <li>It takes a/b = 1.2 × 10^15 seconds ~= 38 million years for a NVIDIA RTX 4090 GPU to have a collision</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="session-5-blockchain-basics-and-transactions-utxo-and-script-code">Session 5: Blockchain Basics and Transactions, UTXO, and Script Code</h2>
+
+<ul>
+  <li>Bitcoin technical feature part 3: Transaction Script and UTXO
+    <ul>
+      <li>Transaction Inputs &amp; Outputs (inputs &gt;= output, input - output = fee)</li>
+      <li>Unspent Transaction Output (UTXO) set</li>
+      <li>Scripts</li>
+    </ul>
+  </li>
+  <li>UTXO must be spent as a whole, they are stored in a nodes’ local LevelDB instance. UTXO is analogous to a bill, I can only hand over 100$ bill, and get the exchange back or tip the exchange (miner fee).</li>
+  <li>Coinbase transaction: the first transaction in a block, it is the reward giving back to the miner, it also uses a nonce.</li>
+</ul>
+
+<h2 id="session-6-smart-contracts-and-dapps">Session 6: Smart Contracts and Dapps</h2>
+
+<ul>
+  <li>Smart Contracts: A set of promises, specialized in digital form, including protocols, within which the parties perform on these promises.</li>
+  <li>Smart Contract Potential Use cases: Digital Identity, Securities, Derivatives, Mortgages, Supply Chain, Clinical Trials</li>
+</ul>
+
+<h2 id="optional-readings">Optional Readings</h2>
+
+<p>Some optional readings I find interesting and could come back to if I find time:</p>
+
+<ol>
+  <li><a href="https://csrc.nist.gov/CSRC/media/Publications/nistir/8202/draft/documents/nistir8202-draft.pdf">NISTIR 8202: Blockchain Technology Overview</a></li>
+  <li><a href="https://blockchain.mit.edu/how-blockchain-works/">MIT: How Blockchain Works</a></li>
+  <li><a href="https://www.coindesk.com/markets/2017/03/04/a-short-guide-to-blockchain-consensus-protocols">A Short Guide to Blockchain Consensus Protocols</a></li>
+  <li><a href="https://queue.acm.org/detail.cfm?id=3136559">Clark Paper: The Design Philosophy of the DARPA Internet Protocols</a> (Recommended by Gary, read more than 6 times)</li>
+  <li><a href="https://www.coindesk.com/markets/2017/08/19/making-sense-of-cryptoeconomics">Making Sense of Cryptoeconomics</a></li>
+  <li><a href="https://medium.com/@mccannatron/state-of-the-dapps-5-observations-from-usage-data-april-2018-a3e9da01bc22">State of the DApps: 5 Observations from Usage Data (April 2018)</a></li>
+  <li><a href="https://bitcoin.org/bitcoin.pdf">Bitcoin Whitepaper</a></li>
+  <li><a href="https://ethereum.org/en/whitepaper/">Ethereum Whitepaper</a></li>
+</ol>
+
+          </div>
+        </article>
+
+        <footer class="footer">
+          <p>© 2025 Luofei's Corner. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .grid {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .article {
+      margin-top: 4rem;
+    }
+
+    .article-header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .article-meta {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 2rem;
+      font-weight: 430;
+    }
+
+    .article-date {
+      margin-right: 1rem;
+    }
+
+    .article-tags {
+      display: inline-block;
+      margin-left: 1rem;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      background-color: #f8f9fa;
+      color: #007bff;
+      text-decoration: none;
+      border-radius: 3px;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+    }
+
+    .article-content {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      font-weight: 430;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .article-links {
+      border-left: 1px solid #eee;
+      padding-left: 2rem;
+    }
+
+    .article-links h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .article-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .article-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-links a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 430;
+    }
+
+    .article-links a:hover {
+      text-decoration: underline;
+    }
+
+    .header-nav {
+      margin: 0;
+      padding: 1rem;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .header-logo {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .header-logo:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</body>
+</html>
