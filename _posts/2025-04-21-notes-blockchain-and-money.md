@@ -35,7 +35,7 @@ fit into the money system and fit into 2018's blockchain visionary back then, an
 - Design of money: token vs. account based, physical vs. digital, private sector vs. central bank, widely accessible vs. wholesale
 
 
-## Session 3: Blockchain Basics & Cryptography: 
+## Session 3: Blockchain Basics & Cryptography
 
 - Blockchain technologies: 
   - Timestamped append-only log (compressed with index of Merkel Tree, making it searchable later)
