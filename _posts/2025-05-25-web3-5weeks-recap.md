@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Week6: Recap on 5 weeks of learning web3"
-date: 2025-04-28 22:59:00 -0400
+date: 2025-05-25 18:00:00 -0400
 categories: Web3
 tags: [Web3]
 ---
